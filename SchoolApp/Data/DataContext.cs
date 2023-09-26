@@ -21,6 +21,8 @@ namespace SchoolApp.Data
             optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=SchoolDb;Trusted_Connection=True;");
         }
 
+        // Defines Relationships between Teacher and Pupil entities through TeacherPupil entity. Creates many-to-many relationship
+        // between them, where one teacher can have many pupils and pupil can have many teacers
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TeacherPupil>()
